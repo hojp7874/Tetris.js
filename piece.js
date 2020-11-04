@@ -1,27 +1,17 @@
 class Piece {
-  x;
-  y;
-  color;
-  shape;
-  ctx;
-  
   constructor(ctx) {
     this.ctx = ctx;
-    this.spawn();
-  }
-  
-  spawn() {
     this.color = 'blue';
     this.shape = [
       [2, 0, 0], 
       [2, 2, 2], 
       [0, 0, 0]
     ];
-    
-    // Starting position.
+
     this.x = 3;
     this.y = 0;
   }
+  
   
   draw() {
     this.ctx.fillStyle = this.color;
@@ -35,5 +25,12 @@ class Piece {
         }
       });
     });
+  }
+
+
+  move(p) {
+    this.x = p.x
+    this.y = p.y
+    this.shape = p.shape
   }
 }
